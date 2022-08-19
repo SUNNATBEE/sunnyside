@@ -62,6 +62,7 @@
 }
 
 html{
+   scroll-behavior: smooth;
    height: 100%;
 }
 
@@ -114,7 +115,7 @@ body{
    top: 115px;
    right: 24px;
    z-index: 5;
-   width: 329px;
+   width: 275px;
    padding: 63px 0 39px 0;
    background-color: #FFFCF8;
    text-align: center;
@@ -229,7 +230,7 @@ body{
    background-repeat: no-repeat;
    
    animation-name: slideToDown;
-   animation-duration: 1s;
+   animation-duration: 0.9s;
    animation-delay: 0.5s;
    animation-iteration-count: infinite;
    animation-direction: alternate;
@@ -237,7 +238,7 @@ body{
 
 @keyframes slideToDown{
    0%{
-      transform: translatey(-30px);
+      transform: translatey(-40px);
       
    }
    
@@ -306,7 +307,8 @@ body{
 }
 /* Hero section start */
 .hero__heading {
-   font-size: 50px;
+   font-family: var(--title-font-family);
+   font-size: 35px;
    line-height: 60px;
    letter-spacing: 8.75px;
 }
@@ -342,53 +344,525 @@ body{
 }
 /* Hero section finish */
 
-/* About fruits section start */
-.about-fruits {
-   
+/* Start Card Section */
+.card-wrapper {
+   max-width: 1516px;
+   margin: 0 auto;
 }
-.about-fruits__list {
-   margin-top: 0;
+.wrap-info-list{
    padding-left: 0;
+   margin: 0;
 }
-.about-fruits__item {
+.wrap-info-list__item {
+   display: flex;
+   flex-direction: column;
 }
-.about-fruits__img {
+
+.wrap-info-list__img {
    width: 320px;
-   height: 312px;
-   background-image: url("../images/egg-mobile.jpg");
-   background-repeat: no-repeat;
-   background-size: contain;
 }
-.about-fruits__textbox {
-   width: 310px;
-   margin-right: auto;
-   margin-left: auto;
+
+.wrap-info-list__img-desktop {
+   display: none;
 }
-.about-fruits__heading {
-   font-family: var(--title-font-family);
+
+.wrap-info-list__info-box {
+   padding: 64px 0;
+}
+
+.wrap-info-list__text-box {
+   max-width: 445px;
+   min-width: 320px;
+   margin: 0 auto;
+}
+
+.wrap-info-list__title-box {
+   max-width: 445px;
+   margin: 0 auto;
+}
+
+.wrap-info-list__title {
+   margin: 0;
+   font-family: 'Fraunces';
    font-weight: 900;
-   font-size: 32px;
+   font-size: 28px;
    line-height: 39px;
    text-align: center;
    letter-spacing: -0.228571px;
    color: #24303E;
 }
-.about-fruits__text {
-   font-family: var(--main-font-family);
+
+.wrap-info-list__text {
+   margin: 24px 0 32px 0;
    font-weight: 600;
-   font-size: 18px;
+   font-size: 16px;
    line-height: 30px;
    text-align: center;
    letter-spacing: -0.128571px;
    color: #808397;
 }
-.about-fruits__link {
+
+.wrap-info-list__link-box {
+   display: flex;
+   justify-content: center;
+   background-image: url("../images/yellow-line.svg");
+   background-repeat: no-repeat;
+   background-size: 137px 10px;
+   background-position: calc(50% + 0px) calc(50% + 5px);
+   transition: all .5s;
+}
+
+.wrap-info-list__link-box:hover {
+   background-image: url("../images/svgyellow.svg");
+}
+
+.wrap-info-list__link-box-pink {
+   background-image: url("../images/pink-line.svg");
+}
+
+.wrap-info-list__link-box-pink:hover {
+   background-image: url("../images/svgred.svg");
+}
+
+.wrap-info-list__link {
+   position: relative;
+   font-family: 'Fraunces';
    font-weight: 900;
    font-size: 15px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
    line-height: 25px;
    letter-spacing: 1px;
    text-transform: uppercase;
    color: #24303E;
+   text-decoration: none;
+}
+.wrap-info-list__link::after{
+   position: absolute;
+   top: 13px;
+   z-index: -1;
+   background-image: url("../images/Rectangle.svg");
+   background-repeat: no-repeat;
+   content: "";
+   display: inline-block;
+   width: 137px;
+   height: 10px;
 }
 
-/* About fruits section finish */
+
+@media only screen and (min-width:321px) {
+   .wrap-info-list__img {
+      width: 100%;
+   }
+   
+   .wrap-info-list__title {
+      font-size: 32px;
+   }
+}
+
+
+@media only screen and (min-width:375px) {
+   
+   .wrap-info-list__img {
+      width: 375px;
+      margin: 0 auto;
+   }
+   
+   .wrap-info-list__text {
+      font-size: 18px;
+   }
+}
+
+@media only screen and (min-width:808px) {
+   .wrap-info-list__item {
+      flex-direction: row-reverse;
+   }
+   
+   .wrap-info-list__item:nth-child(2) {
+      flex-direction: row;
+   }
+   
+   .wrap-info-list__img {
+      width: 50%;
+   }
+   
+   .wrap-info-list__info-box {
+      width: 50%;
+   }
+   
+   .wrap-info-list__title-box,
+   .wrap-info-list__text-box {
+      margin: 0;
+   }
+   
+   .wrap-info-list__link-box {
+      justify-content: flex-start;
+      padding: 0 8px;
+      background-position: calc(0% - 0px) calc(50% + 5px);
+   }
+   
+   .wrap-info-list__title {
+      text-align: left;
+   }
+   
+   .wrap-info-list__text {
+      text-align: left;
+   }
+   
+   .wrap-info-list__info-box {
+      padding: 150px 50px 150px 50px;
+   }
+}
+
+@media only screen and (min-width:821px) {
+   .wrap-info-list__img {
+      margin: 0;
+   }
+}
+
+@media only screen and (min-width:1024px) {
+   .wrap-info-list__img {
+      width: 50%;
+   }
+   
+   .wrap-info-list__item {
+      justify-content: center;
+   }
+   
+   .wrap-info-list__info-box {
+      width: 50%;
+      padding: 157px 110px 157px 165px;
+   }
+   
+   .wrap-info-list__title {
+      font-size: 40px;
+      line-height: 49px;
+   }
+   
+   .wrap-info-list__img {
+      display: none;
+   }
+   
+   .wrap-info-list__img-desktop {
+      display: block;
+      width: 50%;
+   }
+}
+
+/* Start Card Job list */
+.card-job-list{
+   list-style: none;
+   margin: 0;
+   padding-left: 0;
+}
+.card-job-list__item {
+   background-image: url("../images/cherry-mobile.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   padding: 398px 0 59px;
+}
+
+.card-job-list__item:nth-child(2) {
+   background-image: url("../images/apelsin-mobile.jpg");
+}
+
+.card-job-list__title {
+   font-family: 'Fraunces';
+   font-weight: 900;
+   font-size: 28px;
+   line-height: 35px;
+   text-align: center;
+   letter-spacing: -0.2px;
+   color: #24554A;
+}
+
+.card-job-list__text-box {
+   max-width: 339px;
+   margin: 0 auto;
+}
+
+.card-job-list__text {
+   font-weight: 600;
+   font-size: 16px;
+   line-height: 27px;
+   text-align: center;
+   letter-spacing: -0.114286px;
+   color: #24554A;
+}
+
+@media only screen and (min-width:500px) {
+   .card-job-list__item {
+      background-position: calc(50% + 0px) calc(50% + 0px);
+   }
+   
+   .card-job-list__item {
+      background-image: url("../images/cherry-destop.jpg");
+   }
+   
+   .card-job-list__item:nth-child(2) {
+      background-image: url("../images/apelsin-destop.jpg");
+   }
+}
+
+@media only screen and (min-width:720px) {
+   .card-job-list {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+   
+   .card-job-list__item {
+      width: 50%;
+   }
+}
+
+/* End of Card Job list */
+
+/* End of Card Section */
+
+/* Start Testimonial Section */
+#testimonial {
+   padding: 64px 0 86px 0;
+}
+.testimonial-list{
+   list-style: none;
+   padding-left: 0;
+}
+.testimonial-list__item {
+   max-width: 350px;
+   margin: 64px auto 0;
+}
+
+.testimonial-list__item::before {
+   display: block;
+   width: 72px;
+   height: 72px;
+   margin: 0 auto 32px;
+   background-image: url("../images/emily.svg");
+   background-repeat: no-repeat;
+   background-size: contain;
+   content: "";
+}
+
+.testimonial-list__item:nth-child(2):before {
+   background-image: url("../images/thomas.svg");
+}
+
+.testimonial-list__item:nth-child(3):before {
+   background-image: url("../images/jenni.svg");
+}
+
+.testimonial-part__title {
+   margin: 0;
+   font-family: 'Fraunces';
+   font-weight: 900;
+   font-size: 16px;
+   line-height: 20px;
+   text-align: center;
+   letter-spacing: 4px;
+   color: #A7AAAD;
+}
+
+.testimonial-list__text {
+   margin: 0;
+   font-weight: 600;
+   font-size: 18px;
+   line-height: 32px;
+   text-align: center;
+   letter-spacing: -0.128571px;
+   color: #5B636D;
+}
+
+.testimonial-list__title {
+   margin: 32px 0 9px 0;
+   font-family: 'Fraunces';
+   font-weight: 900;
+   font-size: 18px;
+   line-height: 22px;
+   text-align: center;
+   letter-spacing: -0.128571px;
+   color: #24303E;
+}
+
+.testimonial-list__job-name {
+   margin: 0;
+   font-weight: 600;
+   font-size: 14px;
+   line-height: 25px;
+   text-align: center;
+   letter-spacing: -0.1px;
+   color: #A7AAAD;
+}
+
+
+@media only screen and (min-width:700px) {
+   
+   .testimonial-list {
+      display: flex;
+      align-items: start;
+      justify-content: center;
+      margin-top: 64px;
+   }
+   
+   .testimonial-list__item {
+      margin: 0 30px 0 0;
+   }
+}
+
+@media only screen and (min-width:1024px) {
+   #testimonial {
+      padding: 160px 0 160px 0;
+   }
+   
+   .testimonial-list {
+      margin-top: 81px;
+   }
+}
+
+/* End of Testimonial Section */
+
+/* Start Gallery Section */
+.gallery-wrapper {
+   max-width: 1519px;
+   margin: 0 auto;
+}
+
+.gallery-list {
+   display: grid;
+   grid-template-columns: 160px 160px;
+   grid-template-rows: 160px 160px;
+   justify-content: center;
+   list-style: none;
+   margin: 0;
+   padding-left: 0;
+}
+
+.gallery-desktop-img {
+   display: none;
+}
+
+@media only screen and (min-width:375px) {
+   .gallery-list {
+      grid-template-columns: 187px 187px;
+      grid-template-rows: 187px 187px;
+   }
+   
+   .gallery-list__mobile-img {
+      width: 187px;
+      height: 187px;
+      display: none;
+   }
+   
+   .gallery-desktop-img {
+      display: block;
+      width: 187px;
+      height: 187px;
+   }
+}
+
+@media only screen and (min-width:500px) {
+   .gallery-list {
+      grid-template-columns: 270px 270px;
+      grid-template-rows: 270px 270px;
+   }
+   
+   .gallery-desktop-img {
+      width: 270px;
+      height: 270px;
+   }
+}
+
+@media only screen and (min-width:900px) {
+   .gallery-list {
+      grid-template-columns: 300px 300px;
+      grid-template-rows: 300px 300px;
+   }
+   
+   .gallery-desktop-img {
+      width: 300px;
+      height: 300px;
+   }
+}
+
+@media only screen and (min-width:1154px) {
+   .gallery-list {
+      display: grid;
+      grid-template-columns: 363px 363px 363px 363px;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 447px;
+      justify-content: center;
+   }
+   
+   .gallery-desktop-img {
+      width: 100%;
+      height: 447px;
+      object-fit: cover;
+   }
+}
+
+/* End of Gallery Section */
+
+/* Start Footer Section */
+#site-footer {
+   padding: 64px 0 81px 0;
+   background-color: #90D4C6;
+}
+
+.footer-part {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+
+.footer-list {
+   display: flex;
+   align-items: center;
+   margin: 40px 0 88px 0;
+   padding-left: 0;
+   list-style: none;
+}
+
+.footer-list__item:not(:last-child) {
+   margin-right: 57px;
+}
+
+.footer-list__link {
+   font-weight: 600;
+   font-size: 18px;
+   line-height: 25px;
+   letter-spacing: -0.128571px;
+   color: #458D7E;
+   transition: color 0.5s;
+   text-decoration: none;
+}
+
+.footer-list__link:hover {
+   color: #FFFFFF;
+}
+
+.footer-icon-list {
+   display: flex;
+   align-items: center;
+   list-style: none;
+   padding-left: 0;
+}
+
+.footer-icon-list__item:not(:last-child) {
+   margin-right: 28px;
+}
+
+.footer-icon-list__link svg path {
+   transition: fill 0.5s;
+}
+
+.footer-icon-list__link:hover svg path {
+   fill: #ffffff;
+}
+
+@media only screen and (min-width:1024px) {
+   #site-footer {
+      padding: 72px 0;
+   }
+}
