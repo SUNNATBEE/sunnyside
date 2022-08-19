@@ -730,8 +730,8 @@ body{
 
 .gallery-list {
    display: grid;
-   grid-template-columns: 160px 160px;
-   grid-template-rows: 160px 160px;
+   grid-template-columns: repeat(2 , auto);
+   grid-template-rows: repeat(2 , auto);
    justify-content: center;
    list-style: none;
    margin: 0;
