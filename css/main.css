@@ -1,42 +1,394 @@
 /* ROOT */
 :root{
-    /* --main-font-family: "Roboto", "Arial", sans-serif; */
-    /* --main-regular-font-weight: 400; */
-    /* --main-body-bg-color: #fff; */
-    /* --main-text-color: #333; */
+   --main-font-family: "Barlow", "Arial", sans-serif;
+   --title-font-family: "Fraunces", serif;
+   --main-regular-font-weight: 400;
+   --main-body-bg-color: #fff;
+   --main-text-color: #333;
+}
+/* barlow-regular - latin */
+@font-face {
+   font-family: "Barlow";
+   font-style: normal;
+   font-weight: 400;
+   src: local(""),
+   url("../fonts/barlow-v12-latin-regular.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */
+   url("../fonts/barlow-v12-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* barlow-600 - latin */
+@font-face {
+   font-family: "Barlow";
+   font-style: normal;
+   font-weight: 600;
+   src: local(""),
+   url("../fonts/barlow-v12-latin-600.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */
+   url("../fonts/barlow-v12-latin-600.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* fraunces-regular - latin */
+@font-face {
+   font-family: "Fraunces";
+   font-style: normal;
+   font-weight: 400;
+   display: swap;
+   src:
+   url("../fonts/fraunces-v23-latin-regular.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */
+   url("../fonts/fraunces-v23-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* fraunces-700 - latin */
+@font-face {
+   font-family: "Fraunces";
+   font-style: normal;
+   font-weight: 700;
+   display: swap;
+   src: 
+   
+   url("../fonts/fraunces-v23-latin-700.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */
+   url("../fonts/fraunces-v23-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* fraunces-900 - latin */
+@font-face {
+   font-family: "Fraunces";
+   font-style: normal;
+   font-weight: 900;
+   display: swap;
+   src: 
+   url("../fonts/fraunces-v23-latin-900.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */
+   url("../fonts/fraunces-v23-latin-900.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 *{
-    box-sizing: border-box;
+   box-sizing: border-box;
 }
 
 html{
-    height: 100%;
+   height: 100%;
 }
 
 img{
-    display: block;
-    height: 100%;
+   display: block;
+   height: auto;
 }
 
 body{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    margin: 0;
-    font-family: var();
-    font-weight: var();
-    background-color: var();
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+   margin: 0;
+   font-weight: var(--main-regular-font-weight);
+   background-color: var(--main-body-bg-color);
 }
 
 .container{
-    /* max-width: 1340px; */
-    margin: 0 auto;
-    padding: 0 20px;
+   max-width: 1390px;
+   margin: 0 auto;
+   padding: 0 20px;
 }
 
 
 
 .site-main{
-    flex-grow: 1;
+   flex-grow: 1;
 }
+.visually-hidden {
+   position: absolute !important;
+   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+   clip: rect(1px, 1px, 1px, 1px);
+   padding:0 !important;
+   border:0 !important;
+   height: 1px !important; 
+   width: 1px !important; 
+   overflow: hidden;
+}
+/* Site header start */
+
+.site-header {
+   display: flex;
+   align-items: center;
+   padding: 32px 24px 26px 24px;
+   background-color: #49BCF1;
+}
+
+.site-header__links-wrapper {
+   position: fixed;
+   top: 115px;
+   right: 24px;
+   z-index: 5;
+   width: 329px;
+   padding: 63px 0 39px 0;
+   background-color: #FFFCF8;
+   text-align: center;
+   display: none;
+}
+
+.navbar-open .site-header__links-wrapper {
+   display: block;
+}
+
+.triangel {
+   position: absolute;
+   top: -24px;
+   right: 0;
+   display: inline-block;
+   border-top: 24px solid transparent;
+   border-right: 24px solid #FFFCF8;
+}
+
+.nav {
+   margin-right: auto;
+   margin-left: auto;
+}
+
+.nav__list {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   list-style: none;
+   padding-left: 0;
+}
+
+.nav__item:nth-child(2) {
+   margin-top: 32px;
+   margin-bottom: 32px;
+}
+
+.nav__item:nth-child(3) {
+   margin-bottom: 32px;
+}
+
+.nav__link {
+   font-weight: 600;
+   font-size: 20px;
+   line-height: 25px;
+   letter-spacing: -0.142857px;
+   color: #808397;
+   text-decoration: none;
+}
+
+.site-header__link {
+   font-family: "Fraunces", "Times New Roman", serif;
+   display: inline-block;
+   font-weight: 700;
+   font-size: 15px;
+   line-height: 25px;
+   letter-spacing: -0.107143px;
+   text-transform: uppercase;
+   color: #24303E;
+   padding: 16px 30px 15px 32px;
+   background-color: #FBD600;
+   border-radius: 28px;
+   text-decoration: none;
+}
+.site-header__link:hover{
+   background-color: transparent;
+}
+.burger-btn {
+   border: none;
+   background: transparent;
+   width: 24px;
+   height: 18px;
+   background-image: url("../images/burger.svg");
+   background-repeat: no-repeat;
+   background-size: contain;
+   margin-left: auto;
+   padding: 0;
+   cursor: pointer;
+}
+
+/* Site hero start */
+
+.hero {
+   position: relative;
+   padding-top: 88px;
+   padding-bottom: 296px;
+   background-image: url("../images/bg-lemon-mobile.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   text-align: center;
+}
+
+.hero__heading {
+   position: relative;
+   font-weight: 900;
+   font-size: 40px;
+   line-height: 49px;
+   text-align: center;
+   letter-spacing: 6.25px;
+   text-transform: uppercase;
+   color: #FFFFFF;
+}
+
+.hero__link-arrow{
+   position: absolute;
+   top: calc(50% + 25px);
+   left: calc(50% - 15px);
+   width: 36px;
+   height: 115px;
+   background-image: url("../images/arrow.svg");
+   background-repeat: no-repeat;
+   
+   animation-name: slideToDown;
+   animation-duration: 1s;
+   animation-delay: 0.5s;
+   animation-iteration-count: infinite;
+   animation-direction: alternate;
+}
+
+@keyframes slideToDown{
+   0%{
+      transform: translatey(-30px);
+      
+   }
+   
+   100%{
+      transform: translatey(0);
+   }
+   
+}
+
+/* Media start */
+
+@media only screen and (min-width: 640px) {
+   .site-header {
+      justify-content: space-between;
+   }
+   
+   .site-header__links-wrapper {
+      position: static;
+      width: auto;
+      padding: 0%;
+      background: transparent;
+      text-align: left;
+      display: block;
+      display: flex;
+      align-items: center;
+   }
+   
+   .nav {
+      margin-right: 27px;
+   }
+   
+   .nav__list {
+      flex-direction: row;
+      align-items: center;
+   }
+   
+   .nav__item:nth-child(2) {
+      margin-top: 0;
+      margin-right: 24px;
+      margin-bottom: 0;
+      margin-left: 24px;
+   }
+   
+   .nav__item:nth-child(3) {
+      margin-bottom: 0;
+   }
+   
+   .nav__link {
+      font-size: 18px;
+      line-height: 22px;
+      color: #FFFFFF;
+   }
+   
+   .site-header__link {
+      background-color: #FFFFFF;
+   }
+   
+   .site-header__link:hover {
+      color: #FFFFFF;
+      background-color: #78CEF5;
+   }
+   
+   .burger-btn {
+      display: none;
+   }
+}
+/* Hero section start */
+.hero__heading {
+   font-size: 50px;
+   line-height: 60px;
+   letter-spacing: 8.75px;
+}
+
+@media only screen and (min-width: 658px) {
+   .hero__link-arrow{
+      top: calc(50% + 70px);
+      left: calc(50% - 15px);
+   }
+}
+
+@media only screen and (min-width: 768px) {
+   .hero {
+      background-image: url("../images/bg-lemon-destop.jpg");
+   }
+   .hero__link-arrow{
+      top: calc(50% + 60px);
+      left: calc(50% - 15px);
+   }
+}
+@media only screen and (min-width: 992px){
+   .nav__list{
+      margin-right: 47px;
+   }
+   .nav__item:nth-child(2){
+      margin-right: 47px;
+      margin-left: 47px;
+   }
+   .hero__link-arrow{
+      top: calc(50% - 20px);
+      left: calc(50% - 15px);
+   }
+}
+/* Hero section finish */
+
+/* About fruits section start */
+.about-fruits {
+   
+}
+.about-fruits__list {
+   margin-top: 0;
+   padding-left: 0;
+}
+.about-fruits__item {
+}
+.about-fruits__img {
+   width: 320px;
+   height: 312px;
+   background-image: url("../images/egg-mobile.jpg");
+   background-repeat: no-repeat;
+   background-size: contain;
+}
+.about-fruits__textbox {
+   width: 310px;
+   margin-right: auto;
+   margin-left: auto;
+}
+.about-fruits__heading {
+   font-family: var(--title-font-family);
+   font-weight: 900;
+   font-size: 32px;
+   line-height: 39px;
+   text-align: center;
+   letter-spacing: -0.228571px;
+   color: #24303E;
+}
+.about-fruits__text {
+   font-family: var(--main-font-family);
+   font-weight: 600;
+   font-size: 18px;
+   line-height: 30px;
+   text-align: center;
+   letter-spacing: -0.128571px;
+   color: #808397;
+}
+.about-fruits__link {
+   font-weight: 900;
+   font-size: 15px;
+   line-height: 25px;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+   color: #24303E;
+}
+
+/* About fruits section finish */
